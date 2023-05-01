@@ -196,7 +196,8 @@ console.log();
 
 // Ex.20
 
-const array = [1, 2, 3, 4, 5];
-// [1,1,1,4,5]
-array.copyWithin(0, 0, 2);
+const array= [1, 2, 3, 4, 5];
+
+array.copyWithin(1, 0, 1);
+array.copyWithin(2, 0, 1);
 console.log(array);
