@@ -1,0 +1,38 @@
+.body {
+    padding: 0;
+    margin: 0;
+}
+
+
+.container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.weight {
+    margin-left: 2rem;
+}
+
+.height {
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
+.resultTXT {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+#result {
+
+    text-align: center;
+}
+
+.calc-btn{
+    margin-top: 2rem;
+    width: 100%;
+}

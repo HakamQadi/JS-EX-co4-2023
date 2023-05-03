@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bmi.css" />
+    <title>BMI calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>calculat you BMI!</h1>
+      <form action="#" class="myForm">
+        <div class="weight-input">
+          <label for="weight ">Weight </label>
+          <input
+            id="weight"
+            class="weight"
+            type="text"
+            placeholder="Enter your weight "
+          />
+        </div>
+
+        <div class="height-input">
+          <label for="height ">Height </label>
+          <input
+            id="height"
+            class="height"
+            type="text"
+            placeholder="Enter your height "
+            name="height"
+          />
+        </div>
+        <input id="calc-btn" class="calc-btn" type="button" value="calculat" />
+        <h3 class="resultTXT">Your result is</h3>
+        <p id="result"></p>
+      </form>
+    </div>
+    <script src="dom.js"></script>
+  </body>
+</html>
