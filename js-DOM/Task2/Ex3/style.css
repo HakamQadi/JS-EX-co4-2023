@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 10rem 40rem 0 40rem;
+
+    background-color: wheat;
+}
+
+#list ul li button {
+    margin-left: 2rem;
+}
+#add-item-container{
+    margin-bottom: 1rem;
+}

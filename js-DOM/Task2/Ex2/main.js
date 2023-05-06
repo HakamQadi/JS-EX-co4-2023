@@ -33,11 +33,4 @@ let count = document.createElement("span");
 count.textContent = `The words count ${wordsArray.length} `;
 h.insertAdjacentElement("afterend", count);
 
-// Ex.5
-
-
-
-
-
-
-// Ex.6
+ 
