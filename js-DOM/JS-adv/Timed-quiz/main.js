@@ -84,6 +84,18 @@ const quizQuestions = [];
 const answerQuestions = [];
 const choice_A = [];
 const choice_B = [];
+let answers = []
+let correctAnswers = []
+
+
+
+
+
+
+
+
+
+
 
 let questionsCount = 5;
 
@@ -154,40 +166,138 @@ nextBtn.addEventListener("click", () => {
     currentIndex++;
   } else if (quizQuestions.length === questionsCount) {
     nextBtn.textContent = "Finish";
+
     nextBtn.addEventListener("click", () => {
+      // quistionCard.innerHTML = ''
+      // for (let i = 0; i < quizQuestions.length; i++) {
+
+      // quistionCard.innerHTML += `<p> ${quizQuestions[i]}</p >
+      // <label for="">Your answer is</label><br />
+      // <div id="questions_group">
+      // <input class="choice" type="radio" id="one" name="choice" value="a" />
+      // <label class="choicee" for="one">${choice_A[i]}</label><br />
+      // <input class="choice" type="radio" id="two" name="choice" value="b" />
+      // <label class="choicee"  for="two">${choice_B[i]}</label><br />
+      // </div>
+      //   `;
+
+
+      // quistionCard.innerHTML += `
+      // <p> ${quizQuestions[i]}</p >
+      //   <label for="">Your answer is</label><br />
+      //   <div id="questions_group">
+      //   <input class="choice" type="radio" id="one" name="choice" value="a" />
+      //   <div id="labeldiv1"><label id="lbl1" class="choicee" for="one">${choice_A[i]}</label></div><br />
+      //   <input class="choice" type="radio" id="two" name="choice" value="b" />
+      //  <div id="labeldiv2"> <label id="lbl2" class="choicee"  for="two">${choice_B[i]}</label></div><br />
+      //   </div>
+      //     `;
+
+      // quistionCard.innerHTML += `
+      //     <p> ${quizQuestions[i]}</p >
+      //     <label for="">Your answer is</label><br />
+      //     <div id="questions_group">
+
+      //     </div>  
+      //     `
       quistionCard.innerHTML = ''
       for (let i = 0; i < quizQuestions.length; i++) {
-        quistionCard.innerHTML += `<p p > ${quizQuestions[i]}</p >
-        <label for="">Your answer is</label><br />
-        <div id="questions_group">
-        <input class="choice" type="radio" id="one" name="choice" value="a" />
-        <label class="choicee" for="one">${choice_A[i]}</label><br />
-        <input class="choice" type="radio" id="two" name="choice" value="b" />
-        <label class="choicee"  for="two">${choice_B[i]}</label><br />
-        </div>
-          `;
-        // let labels = document.querySelectorAll('label');
-        // for (let i = 0; i < labels.length; i++) {
-        //   labels[i].addEventListener('click', function () {
-        //     if (labels[i].value == currentAnswer[0]) {
-        //       // console.log("true");
-        //       labels[i].parentElement.style.color = 'green';
+        let questionsGroup = document.createElement("div")
 
-        //       // console.log(labels[i]);
-        //     }
-        //     else {
-        //       // console.log("false");
-        //       // console.log(labels[i]);
-        //       labels[i].parentElement.style.color = 'red';
+        let input1 = document.createElement("input")
+        input1.type = "radio";
+        input1.id = "one";
+
+        let label1 = document.createElement("label")
+        label1.innerText = choice_A[i]
+
+        if (correctAnswers[0] !== answers[0]) {
+          console.log("corrrrrert")
+          label1.style.color = "green"
+          // continue;
+        }else {
+          label1.style.color = "red"
+        }
 
 
-        //     }
-        //     //  console.log("answer    " + currentAnswer[i])
-        //     //  console.log("answer    " + currentAnswer[0])
-        //     // console.log(radios[i].value)
-        //   });
-        // }
+        label1.id = "lbl1"
+
+
+
+        let input2 = document.createElement("input")
+        input1.type = "radio";
+        input1.id = "two";
+
+        let label2 = document.createElement("label")
+        // label2.innerText = choice_B[i]
+        label2.style.color = "red"
+
+        label2.id = "lbl1"
+
+        quistionCard.appendChild(questionsGroup)
+        // questionsGroup.appendChild(input1)
+        questionsGroup.appendChild(label1)
+        // questionsGroup.appendChild(input2)
+        questionsGroup.appendChild(label2)
       }
+      // let labeldiv1 = document.getElementById("labeldiv1");
+      // let labeldiv2 = document.getElementById("labeldiv2");
+
+      // let label1 = document.getElementById("lbl1")
+      // let label2 = document.getElementById("lbl2")
+
+      // let input1 = document.getElementById("one")
+      // let input2 = document.getElementById("two")
+
+      // let questionsGroup = document.getElementById("questions_group")
+
+      // questionsGroup.appendChild(input1)
+      // questionsGroup.appendChild(labeldiv1)
+      // questionsGroup.appendChild(input2)
+      // questionsGroup.appendChild(labeldiv2)
+
+
+
+      // for (let i = 0; i < quizQuestions.length; i++) {
+      //   for (let j = 0; j < answers.length; j++) {
+      //     console.log(answers[j])
+      //     quistionCard.innerHTML += `<p> ${quizQuestions[i]}</p >
+      //   <label for="">Your answer is</label><br />
+      //   <div id="questions_group">
+      //   <input class="choice" type="radio" id="one" name="choice" value="a" />
+      //   <span>${answers[j]}</span>
+      //   <input class="choice" type="radio" id="two" name="choice" value="b" />
+      //   <span>${answers[j]}</span>
+      //   </div>
+      //     `;
+      //   }
+
+
+
+
+
+      // let labels = document.querySelectorAll('label');
+      // for (let i = 0; i < labels.length; i++) {
+      //   labels[i].addEventListener('click', function () {
+      //     if (labels[i].value == currentAnswer[0]) {
+      //       // console.log("true");
+      //       labels[i].parentElement.style.color = 'green';
+
+      //       // console.log(labels[i]);
+      //     }
+      //     else {
+      //       // console.log("false");
+      //       // console.log(labels[i]);
+      //       labels[i].parentElement.style.color = 'red';
+
+
+      //     }
+      //     //  console.log("answer    " + currentAnswer[i])
+      //     //  console.log("answer    " + currentAnswer[0])
+      //     // console.log(radios[i].value)
+      //   });
+      // }
+      // }
       nextBtn.textContent = "Play again!";
       nextBtn.addEventListener("click", () => {
         window.location.reload();
@@ -197,25 +307,35 @@ nextBtn.addEventListener("click", () => {
     });
   }
 
-
-
   let radios = document.querySelectorAll(".choice");
+  // console.log(radios)
   let labels = document.querySelectorAll('label');
   for (let i = 0; i < radios.length; i++) {
     radios[i].addEventListener('click', function () {
       if (radios[i].value == currentAnswer[0]) {
-        console.log("true");
-        labels[i].parentElement.style.color = 'green';
+        // console.log(radios[i].value)
+        // console.log("true");
+        labels[i].style.color = 'green';
+        answers.push(labels[i])
+        correctAnswers.push(labels[i])
+
+        // console.log(answers[i])
+
+        // console.log(ind)
         // labels[i].childNodes.style.color = "red"
         // labels[i].parentNode.firstChild.style.color = 'green';
 
-        console.log(labels[i]);
+        // console.log(labels[i]);
       }
       else {
-        console.log("false");
-        console.log(labels[i]);
-        labels[i].childNodes.style.color = "red"
-        // labels[i].parentElement.style.color = 'red';
+        // console.log("false");
+        // console.log(labels[i]);
+        // labels[i].childNodes.style.color = "red"
+        labels[i].style.color = 'red';
+        answers.push(labels[i])
+        // console.log(answers[i])
+        // console.log(ind)
+
         // labels[i].parentNode.firstChild.style.color = 'red';
 
 
@@ -226,6 +346,8 @@ nextBtn.addEventListener("click", () => {
     });
   }
 
+
+  console.log(answers[1])
 
 });
 
